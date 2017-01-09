@@ -1,0 +1,49 @@
+<!doctype html>
+<!--ng-app declared here to allow angular to know where it is required -->
+<html data-ng-app ="myApp">
+  <head>
+    <title>My To-Do List</title>
+    <!--Load the custom css for the app-->
+    <link rel="stylesheet" type="text/css" href="CSS/myPersonalStyleSheet.css">
+  </head>
+  <body>
+  <!--Container div pointing to the controller js file -->
+  	<div class="container" data-ng-controller="toDoListController">
+      <center><h1>To Do List</h1></center>
+      <!-- Initialising 2 variables for angular-->
+      <form ng-init="listName,listDescription">
+      <!-- ng-modal declared here for directive - user input here and name populates in real time beside input field-->
+        <input type="text" placeholder="Name" data-ng-model="listName"> {{listName}}
+        <br/>
+        <!-- ng-modal declared here for directive - user input here and description populates in real time beside input field-->
+        <input type="text" placeholder="Description" ng-model="listDescription"/> {{listDescription}}
+    </form><!--End of Form -->
+
+     <!-- Button to add item, angular onclick call to fire function addListItem()-->
+      <button data-ng-click="addListItem()">Add Item</button><br/>
+      <br/>
+      <!--Table to structure the output -->
+      <table id="tableId">
+      <!--Header Row -->
+      <tr>
+        <td>Name</td>
+        <td>Task</td>
+        <td>Delete</td>
+      </tr>
+       <!--angular ng-repeat used here to iterate through the items in the array - currentItem is variable in listArray -->
+       <tr data-ng-repeat="currentItem in listArray"> 
+       <!-- angular directive used to populate names and descriptions-->
+        <td>{{currentItem.name}}</td>
+        <td>{{currentItem.description}}</td>
+        <!-- angular ng-click event used to fire remove function, passing in the parameter of currentItem.name-->
+        <td><button data-ng-click="remove(currentItem.name)">Delete</a></td>
+        </tr>
+      </table>
+      </div>
+  	</div>   
+  </body>
+  <!--scripts loaded at the bottom of the page for optimisation and speed of app -->
+ <script src="angular.min.js"></script>
+ <script src="phonegap.js"></script>
+ <script type="text/javascript" src="JS/toDoListController.js"></script>
+</html>

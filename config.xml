@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--Widget node is root node of file containing id,version,xmlns and xmlns:cdv attributes -->
+<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <!--Name of app -->
+    <name>To Do List</name>
+    <!--Brief description of app -->
+    <description>
+        A simple To Do List using Angular
+    </description>
+    <!--email address as attribute of author tag, name between opening and closing tags -->
+    <author email="bart.oshea@digitalskillsacademy.me" href="http://cordova.io">
+        Bart O'Shea
+    </author>
+    <!--content contains path to file that kicks off the application -->
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <!--Customized icon added to file -->
+    <icon src="icon.png" platform="android" density="ldpi" />
+    <!--request network permissions -->
+    <feature name="http://api.phonegap.com/1.0/network" />
+</widget>
