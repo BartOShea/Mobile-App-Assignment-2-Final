@@ -29,7 +29,7 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <!--Customized icon added to file -->
-    <icon src="icon.png" platform="android" density="ldpi" />
+    <icon src="img/icon.png" platform="android" density="ldpi" gap:role="default" />
     <!--request network permissions -->
     <feature name="http://api.phonegap.com/1.0/network" />
 </widget>
